@@ -44,38 +44,39 @@ lazy val settings = Seq(
 
   publishMavenStyle := true,
 
-  publishArtifact in Test := false,
-
-  pomIncludeRepository := { _ => false },
-
-  publishTo <<= version { (v: String) =>
-    val nexus = "https://oss.sonatype.org/"
-    if (v.trim.endsWith("SNAPSHOT"))
-      Some("snapshots" at nexus + "content/repositories/snapshots")
-    else
-      Some("releases"  at nexus + "service/local/staging/deploy/maven2")
-  },
-
-  pomExtra := <url>https://github.com/hyperledger/iroha-scala</url>
-    <licenses>
-      <license>
-        <name>The Apache License, Version 2.0</name>
-        <url>http://www.apache.org/licenses/LICENSE-2.0</url>
-        <distribution>repo</distribution>
-      </license>
-    </licenses>
-    <scm>
-      <url>git@github.com:hyperledger/iroha-scala.git</url>
-      <connection>scm:git:git@github.com:hyperledger/iroha-scala.git</connection>
-    </scm>
-    <developers>
-      <developer>
-        <id>hyperledger</id>
-        <name>iroha-scala</name>
-        <url>https://github.com/hyperledger/iroha-scala</url>
-      </developer>
-    </developers>
+  publishArtifact in Test := false
 )
+
+//  pomIncludeRepository := { _ => false },
+//
+//  publishTo <<= version { (v: String) =>
+//    val nexus = "https://oss.sonatype.org/"
+//    if (v.trim.endsWith("SNAPSHOT"))
+//      Some("snapshots" at nexus + "content/repositories/snapshots")
+//    else
+//      Some("releases"  at nexus + "service/local/staging/deploy/maven2")
+//  },
+//
+//  pomExtra := <url>https://github.com/hyperledger/iroha-scala</url>
+//    <licenses>
+//      <license>
+//        <name>The Apache License, Version 2.0</name>
+//        <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+//        <distribution>repo</distribution>
+//      </license>
+//    </licenses>
+//    <scm>
+//      <url>git@github.com:hyperledger/iroha-scala.git</url>
+//      <connection>scm:git:git@github.com:hyperledger/iroha-scala.git</connection>
+//    </scm>
+//    <developers>
+//      <developer>
+//        <id>hyperledger</id>
+//        <name>iroha-scala</name>
+//        <url>https://github.com/hyperledger/iroha-scala</url>
+//      </developer>
+//    </developers>
+//)
 
 lazy val irohaScala = (project in file("."))
   .settings(settings: _*)
