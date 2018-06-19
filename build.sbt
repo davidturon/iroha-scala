@@ -12,6 +12,7 @@ lazy val libraries = Seq(
   "org.scala-lang" % "scala-library" % "2.12.6",
   "org.scala-lang" % "scala-reflect" % "2.12.6",
   "org.scala-lang.modules" %% "scala-xml" % "1.1.0",
+  "org.scala-lang.modules" %% "scala-parser-combinators" % "1.1.1",
   "io.grpc" % "grpc-netty" % "1.0.1",
   "com.trueaccord.scalapb" %% "scalapb-runtime-grpc" % com.trueaccord.scalapb.compiler.Version.scalapbVersion,
   "com.trueaccord.scalapb" %% "scalapb-runtime" % com.trueaccord.scalapb.compiler.Version.scalapbVersion % "protobuf",
